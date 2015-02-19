@@ -12,24 +12,22 @@
 <script src="rsc/js/jquery.js" type="text/javascript"></script>
 <script src="rsc/js/jquery-ui.js" type="text/javascript"></script>
 <link rel="stylesheet" href="rsc/css/jquery-ui.css">
-<title>Agenda - Adicionar Contatos</title>
+<title>Agenda - Adicionar Funcionário</title>
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
-	<h4>Adicionar Contatos</h4>	
-	<form:form commandName="contato" action="adicionarContato"
+	<h4>Adicionar Funcionário</h4>
+	<form:form commandName="funcionario" action="adicionarFuncionario"
 		method="post">
 		<agenda:campoTexto label="Nome: " id="nome" />
 		<br />
-		<agenda:campoTexto label="Email: " id="email" />
+		<agenda:campoTexto label="Usuário: " id="usuario" />
 		<br />
-		<agenda:campoTexto label="Endereço: " id="endereco" />
+		<agenda:campoSenha label="Senha: " id="senha" />
 		<br />
-		<agenda:campoData label="Data de Nascimento: " id="dataNascimento" />
-		<br />
-		<input type="submit" value="Gravar">
+		<input type="submit" value="Salvar">
 	</form:form>
-	<br />
+
 	<c:import url="rodape.jsp" />
 </body>
 </html>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.caelum.agenda.modelo.Funcionario;
+import br.com.caelum.agenda.modelo.Grupo;
 
 @Repository
 @Transactional
@@ -33,6 +34,10 @@ public class FuncionarioDAO {
 
 	public void remover(Funcionario funcionario) {
 		sessionFactory.getCurrentSession().delete(funcionario);
+	}
+	
+	public void adicionar(Funcionario funcionario) {
+		sessionFactory.getCurrentSession().save(funcionario);
 	}
 
 }
