@@ -5,18 +5,19 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="agenda"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <script src="rsc/js/jquery.js" type="text/javascript"></script>
 <script src="rsc/js/jquery-ui.js" type="text/javascript"></script>
 <link rel="stylesheet" href="rsc/css/jquery-ui.css">
+
 <title>Agenda - Adicionar Contatos</title>
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
-	<h4>Adicionar Contatos</h4>	
+	<br />
 	<form:form commandName="contato" action="adicionarContato"
 		method="post">
 		<agenda:campoTexto label="Nome: " id="nome" />
