@@ -2,13 +2,13 @@ package br.com.caelum.agenda.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.com.caelum.agenda.modelo.Funcionario;
-import br.com.caelum.agenda.modelo.Grupo;
 
 @Repository
 @Transactional

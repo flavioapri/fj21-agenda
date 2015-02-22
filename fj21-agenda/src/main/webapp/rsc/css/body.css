@@ -1,0 +1,27 @@
+body {
+	font-family: Georgia;
+}
+
+#menu {
+	font-family: sans-serif;
+}
+ul#menu li {
+	display: inline-block;
+	text-align: center;
+	width: 200px;
+}
+
+ul#menu a:hover {
+	display: inline-block;
+	background-color: #fef990;
+	text-align: center;
+	text-decoration: none;
+	width: 200px;
+}
+
+ul#menu a:link, a:visited {
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	width: 200px;
+}

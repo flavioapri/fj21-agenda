@@ -28,7 +28,7 @@ public class ContatoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Contato> listar() {
 		List<Contato> contatos = sessionFactory.getCurrentSession()
-				.createQuery("from contatos").list();
+				.createQuery("from Contato").list();
 		return contatos;
 	}
 
@@ -36,7 +36,10 @@ public class ContatoDAO {
 		sessionFactory.getCurrentSession().update(contato);
 	}
 
-	public void remover(Contato contato) {
+	public void remover(Long id) {
+		Contato contato = (Contato) sessionFactory.getCurrentSession().load(
+				Contato.class, id);
 		sessionFactory.getCurrentSession().delete(contato);
 	}
+	
 }
