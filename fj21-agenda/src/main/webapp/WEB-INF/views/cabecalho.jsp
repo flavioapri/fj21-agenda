@@ -9,6 +9,8 @@
 <ul id="menu">
 	<li><a href="adiciona-contato"><b>Adicionar Contato</b></a></li>
 	<li><a href="lista-contato"><b>Listar Contatos</b></a></li>
+	<li><a href="adiciona-funcionario"><b>Adicionar Funcionário</b></a></li>
+	<li><a href="lista-funcionario"><b>Listar Funcionários</b></a></li>
 </ul>
 <hr>
 </body>

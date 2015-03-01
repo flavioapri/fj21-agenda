@@ -58,7 +58,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping("lista-funcionario")
-	public String listaFuncionario() {
+	public String listaFuncionario(Model model) {
+		model.addAttribute("funcionarios", funcionarioDAO.listar());
 		return "lista-funcionario";
 	}
 	
@@ -98,5 +99,53 @@ public class HomeController {
 	public String removerContato(Long id) {
 		contatoDAO.remover(id);
 		return "redirect:lista-contato";
+	}
+	
+	@RequestMapping(value = "removerFuncionario", method = RequestMethod.GET)
+	public String removerFuncionario(Long id) {
+		funcionarioDAO.remover(id);
+		return "redirect:lista-funcionario";
+	}
+	
+	@RequestMapping(value = "removerGrupo", method = RequestMethod.GET)
+	public String removerGrupo(Long id) {
+		grupoDAO.remover(id);
+		return "redirect:lista-grupo";
+	}
+	
+	@RequestMapping(value = "editarContato", method = RequestMethod.POST)
+	public String editarContato(@Valid Contato contato, BindingResult result) {
+		if (result.hasErrors()) {
+			return "editar-contato";
+		}
+		contatoDAO.alterar(contato);
+		return "redirect:lista-contato";
+	}
+	
+	@RequestMapping(value = "editarFuncionario", method = RequestMethod.GET)
+	public String editarFuncionario(@Valid Funcionario funcionario, BindingResult result) {
+		funcionarioDAO.alterar(funcionario);
+		if (result.hasErrors()) {
+			return "editar-funcionario";
+		}
+		funcionarioDAO.alterar(funcionario);
+		return "redirect:lista-funcionario";
+	}
+	
+	@RequestMapping(value = "editarGrupo", method = RequestMethod.GET)
+	public String editarGrupo(@Valid Grupo grupo, BindingResult result) {
+		grupoDAO.alterar(grupo);
+		if (result.hasErrors()) {
+			return "editar-grupo";
+		}
+		grupoDAO.alterar(grupo);
+		return "redirect:lista-grupo";
+	}
+	
+	@RequestMapping(value = "exibirContato", method = RequestMethod.GET)
+	public String exibirContato(Long id, Model model) {
+		Contato contato = contatoDAO.carregarPorId(id);
+		model.addAttribute("contato", contato);
+		return "exibir-contato";
 	}
 }

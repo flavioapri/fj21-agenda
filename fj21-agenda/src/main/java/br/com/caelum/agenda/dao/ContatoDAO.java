@@ -42,4 +42,12 @@ public class ContatoDAO {
 		sessionFactory.getCurrentSession().delete(contato);
 	}
 	
+	public Contato carregarPorId(Long id) {
+		return (Contato) sessionFactory.getCurrentSession().load(Contato.class, id);
+	}
+	
+	public Contato exibir(Long id) {
+		return (Contato) sessionFactory.getCurrentSession().load(Contato.class, id);
+	}
+	
 }

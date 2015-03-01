@@ -24,7 +24,7 @@ public class GrupoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Grupo> listar() {
 		List<Grupo> grupos = sessionFactory.getCurrentSession()
-				.createQuery("from grupo").list();
+				.createQuery("from Grupo").list();
 		return grupos;
 	}
 
@@ -32,12 +32,14 @@ public class GrupoDAO {
 		sessionFactory.getCurrentSession().update(grupo);
 	}
 
-	public void remover(Grupo grupo) {
+	public void remover(Long id) {
+		Grupo grupo = (Grupo) sessionFactory.getCurrentSession().load(
+				Grupo.class, id);
 		sessionFactory.getCurrentSession().delete(grupo);
 	}
 
 	public void adicionar(Grupo grupo) {
 		sessionFactory.getCurrentSession().save(grupo);
 	}
-	
+
 }

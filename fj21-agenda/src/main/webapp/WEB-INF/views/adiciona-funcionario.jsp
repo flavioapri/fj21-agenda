@@ -9,11 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script src="rsc/js/jquery.js" type="text/javascript"></script>
-<script src="rsc/js/jquery-ui.js" type="text/javascript"></script>
-<link rel="stylesheet" href="rsc/css/jquery-ui.css">
-<link href="rsc/css/cabecalho.css" rel="stylesheet">
-
+<link rel="stylesheet" href="rsc/css/body.css">
 <title>Agenda - Adicionar Funcionário</title>
 </head>
 <body>

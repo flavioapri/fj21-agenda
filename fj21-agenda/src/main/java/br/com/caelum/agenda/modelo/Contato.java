@@ -1,6 +1,6 @@
 package br.com.caelum.agenda.modelo;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,10 +24,14 @@ public class Contato {
 	private String email;
 	private String endereco;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Calendar dataNascimento;
+	private Date dataNascimento;
 
 	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -54,11 +58,11 @@ public class Contato {
 		this.endereco = endereco;
 	}
 
-	public Calendar getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

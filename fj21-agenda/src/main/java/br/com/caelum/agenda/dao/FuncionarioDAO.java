@@ -24,7 +24,7 @@ public class FuncionarioDAO {
 	@SuppressWarnings("unchecked")
 	public List<Funcionario> listar() {
 		List<Funcionario> funcionarios = sessionFactory.getCurrentSession().createQuery(
-				"from funcionarios").list();
+				"from Funcionario").list();
 		return funcionarios;
 	}
 
@@ -32,7 +32,9 @@ public class FuncionarioDAO {
 		sessionFactory.getCurrentSession().update(funcionario);
 	}
 
-	public void remover(Funcionario funcionario) {
+	public void remover(Long id) {
+		Funcionario funcionario = (Funcionario) sessionFactory.getCurrentSession().load(
+				Funcionario.class, id);
 		sessionFactory.getCurrentSession().delete(funcionario);
 	}
 	

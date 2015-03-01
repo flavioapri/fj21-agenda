@@ -22,6 +22,19 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+	<!-- Implementação do Design Pattern "Open Session in View" nescessário para evitar
+	erros de inicialização tardia nas JSP (Lazzy Initialization) -->	
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+	</filter-mapping>
+	
 	<!-- Cria o contâiner do Spring compartilhado por todas a servlets e filtros -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
